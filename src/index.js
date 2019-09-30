@@ -1,9 +1,17 @@
-/**
- * @format
- */
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
+import Layout from './components/layout';
+import RootNavigator from './navigation/navigators/index';
+import store from './store';
 
-import {AppRegistry} from 'react-native';
-import App from '../App';
-import {name as appName} from './app.json';
-
-AppRegistry.registerComponent(appName, () => App);
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Layout>
+          <RootNavigator />
+        </Layout>
+      </Provider>
+    );
+  }
+}
