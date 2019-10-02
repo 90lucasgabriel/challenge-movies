@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'yellow',
-    height: 300,
+    backgroundColor: '#E2E2E2',
+    flex: 1,
   },
 
   scrollContainer: {
@@ -11,8 +11,11 @@ const styles = StyleSheet.create({
     display: 'flex',
   },
 
-  wrapper: {
-    justifyContent: 'space-between',
+  wrapperLoader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 180,
   },
 
   textInput: {
@@ -30,6 +33,71 @@ const styles = StyleSheet.create({
 
   blue: {
     backgroundColor: 'blue',
+  },
+
+  wrapper: {
+    flex: 1,
+    justifyContent: 'space-around',
+  },
+
+  categoryTitle: {
+    fontSize: 20,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+
+  horizontalView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 5,
+  },
+
+  card: {
+    position: 'relative',
+    height: 180,
+    width: 125,
+    backgroundColor: 'white',
+    margin: 5,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    textAlign: 'center',
+    elevation: 3,
+    overflow: 'hidden',
+  },
+
+  title: {
+    margin: 10,
+    textAlign: 'center',
+  },
+
+  featuredCard: {
+    position: 'relative',
+    height: 300,
+    width: 170,
+    backgroundColor: 'white',
+    margin: 5,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    textAlign: 'center',
+    elevation: 3,
+  },
+
+  featuredTitle: {
+    margin: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+
+  imagePoster: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 400,
+    height: 500,
   },
 });
 

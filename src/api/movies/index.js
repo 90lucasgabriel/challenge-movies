@@ -20,16 +20,16 @@
 
 // import React from 'react';
 // import {bindActionCreators} from 'redux';
-// import * as PostsActions from './actions';
+// import * as MoviesActions from './actions';
 // import {connect} from 'react-redux';
 // import FeedComponent from '../components';
 
 // const mapStateToProps = state => ({
-//   posts: state.posts,
+//   movies: state.movies,
 // });
 
 // const mapDispatchToProps = dispatch =>
-//   bindActionCreators(PostsActions, dispatch);
+//   bindActionCreators(MoviesActions, dispatch);
 
 // export const Feed = connect(
 //   mapStateToProps,

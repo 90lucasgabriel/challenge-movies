@@ -1,69 +1,194 @@
 import React from 'react';
-import {Text, View, TextInput, Button, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  Button,
+  Image,
+  ScrollView,
+  ActivityIndicator,
+} from 'react-native';
 import MovieCard from '../../../components/movie_card';
 import styles from './styles';
-// import {fetchAllPosts} from '../../../api/movies/actions';
-import MoviesService from '../../../api/movies';
-// import MoviesService from '../../../api/movies';
 
 export default class FeedComponent extends React.Component {
-  // movies = new MoviesService();
-
   constructor(props) {
     super(props);
-    // console.log('fetchAllPosts', fetchAllPosts());
-    // this.movies.query();
-    console.log('props', props);
-
-    // this.movies.query().then(data => {
-    //   console.log('success', data);
-    // });
-    console.log('state', this.state);
-
-    // this.props.fetchAllPosts();
-    // console.log('props.posts', this.props.posts);
+    this.props.movies.movies = [];
+    this.queryMovies();
+    // this.queryPopular();
+    console.log('props', this.props);
   }
 
-  state = {
-    newTodoText: '',
+  queryMovies = () => {
+    try {
+      this.props.queryMovies();
+      console.log('props1', this.props);
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
-  addNewTodo = async () => {
-    // console.log('text', this.state);
-    // this.props.addTodo(this.state.newTodoText);
-    // this.setState({newTodoText: ''});
-    console.log(this.props);
-
-    await this.props.fetchAllPosts().then(p => {
-      console.log('p', p.data);
-    });
-  };
+  // queryPopular = () => {
+  //   // this.props.queryPopular();
+  // };
 
   render() {
     return (
-      // <ScrollView style={styles.scrollContainer}>
-      //   <View style={styles.wrapper}>
-      //     <MovieCard>aoishd</MovieCard>
-      //     <MovieCard style={styles.blue} />
-      //     <MovieCard />
-      //     <MovieCard style={styles.blue} />
-      //     <MovieCard />
-      //     <MovieCard style={styles.blue} />
-      //   </View>
-      // </ScrollView>
       <View style={styles.container}>
-        {this.props.feedData.map(todo => (
-          <Text key={todo.id} style={styles.text}>
-            {todo.text}
-          </Text>
-        ))}
-        <TextInput
-          style={styles.textInput}
-          placeholder="Criar uma nota..."
-          value={this.state.newTodoText}
-          onChangeText={newTodoText => this.setState({newTodoText})}
-        />
-        <Button style={styles.button} title="+" onPress={this.addNewTodo} />
+        <ScrollView style={styles.scrollContainer}>
+          {/* EM ALTA START */}
+          {this.props.movies.isLoading ? (
+            <View style={styles.wrapperLoader}>
+              <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+          ) : (
+            <View style={styles.wrapper}>
+              <Text style={styles.categoryTitle}>Em Alta</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={styles.horizontalScroll}>
+                <View style={styles.horizontalView}>
+                  {this.props.movies.movies.map(m => {
+                    // console.log(m);
+                    return (
+                      <View key={m.movie.ids.trakt} style={styles.card}>
+                        <Image
+                          style={styles.imagePoster}
+                          resizeMode="cover"
+                          source={{
+                            uri: `https://picsum.photos/${Math.floor(
+                              Math.random() * 350,
+                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
+                          }}
+                        />
+                        <Text style={styles.title}>{m.movie.title}</Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              </ScrollView>
+            </View>
+          )}
+          {/* LANCAMENTOS END */}
+
+          {/* POPULARES START
+          {this.props.movies.isLoading ? (
+            <View style={styles.wrapperLoader}>
+              <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+          ) : (
+            <View style={styles.wrapper}>
+              <Text style={styles.categoryTitle}>Populares</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={styles.horizontalScroll}>
+                <View style={styles.horizontalView}>
+                  {this.props.movies.movies.map(m => {
+                    // console.log(m);
+                    return (
+                      <View key={m.movie.ids.trakt} style={styles.card}>
+                        <Image
+                          style={styles.imagePoster}
+                          resizeMode="cover"
+                          source={{
+                            uri: `https://picsum.photos/${Math.floor(
+                              Math.random() * 350,
+                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
+                          }}
+                        />
+                        <Text style={styles.title}>{m.movie.title}</Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              </ScrollView>
+            </View> */}
+          {/* )} */}
+          {/* FEATUREDS END */}
+
+          {/* FEATURED START */}
+          {/* {this.props.movies.isLoading ? (
+            <View style={styles.wrapperLoader}>
+              <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+          ) : (
+            <View style={styles.wrapper}>
+              <Text style={styles.categoryTitle}>Destaques</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={styles.horizontalScroll}>
+                <View style={styles.horizontalView}>
+                  {this.props.movies.movies.map(m => {
+                    // console.log(m);
+                    return (
+                      <View key={m.movie.ids.trakt} style={styles.featuredCard}>
+                        <Image
+                          style={styles.imagePoster}
+                          resizeMode="cover"
+                          source={{
+                            uri: `https://picsum.photos/${Math.floor(
+                              Math.random() * 350,
+                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
+                          }}
+                        />
+                        <Text style={styles.featuredTitle}>
+                          {m.movie.title}
+                        </Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              </ScrollView>
+            </View> */}
+          {/* )} */}
+          {/* FEATURED END */}
+
+          {/* COMEDIA START */}
+          {/* {this.props.movies.isLoading ? (
+            <View style={styles.wrapperLoader}>
+              <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+          ) : (
+            <View style={styles.wrapper}>
+              <Text style={styles.categoryTitle}>Comédia</Text>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={styles.horizontalScroll}>
+                <View style={styles.horizontalView}>
+                  {this.props.movies.movies.map(m => {
+                    // console.log(m);
+                    return (
+                      <View key={m.movie.ids.trakt} style={styles.card}>
+                        <Image
+                          style={styles.imagePoster}
+                          resizeMode="cover"
+                          source={{
+                            uri: `https://picsum.photos/${Math.floor(
+                              Math.random() * 350,
+                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
+                          }}
+                        />
+                        <Text style={styles.title}>{m.movie.title}</Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              </ScrollView>
+            </View>
+          )} */}
+          {/* COMEDIA END */}
+        </ScrollView>
+        <View>
+          <Button
+            style={styles.button}
+            title="Load Movies"
+            onPress={this.queryMovies}
+          />
+        </View>
       </View>
     );
   }
