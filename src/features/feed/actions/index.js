@@ -4,3 +4,10 @@ export function addTodo(text) {
     text,
   };
 }
+
+// export function queryMovies() {
+//   return {
+//     type: 'QUERY_MOVIES',
+//     text,
+//   };
+// }

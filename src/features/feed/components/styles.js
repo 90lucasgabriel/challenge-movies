@@ -6,6 +6,15 @@ const styles = StyleSheet.create({
     height: 300,
   },
 
+  scrollContainer: {
+    flexDirection: 'column',
+    display: 'flex',
+  },
+
+  wrapper: {
+    justifyContent: 'space-between',
+  },
+
   textInput: {
     height: 40,
     borderColor: 'red',
@@ -17,6 +26,10 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     bottom: 20,
     right: 40,
+  },
+
+  blue: {
+    backgroundColor: 'blue',
   },
 });
 

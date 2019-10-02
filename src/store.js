@@ -1,16 +1,11 @@
 import {applyMiddleware, createStore, compose} from 'redux';
+import promise from 'redux-promise-middleware';
 // import thunk from 'redux-thunk';
-// import {createLogger} from 'redux-logger';
+import {logger} from 'redux-logger';
+
 import rootReducer from './reducers';
 
-// let logger = createLogger({
-//   timestamps: true,
-//   duration: true,
-// });
-
-const tilteStore = createStore(
-  rootReducer,
-  // compose(applyMiddleware(thunk, logger)),
-);
+const middleware = applyMiddleware(promise, logger);
+const tilteStore = createStore(rootReducer, middleware);
 
 export default tilteStore;
