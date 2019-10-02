@@ -10,7 +10,7 @@ const initState = {
   error: false,
 };
 
-export default function movieReducer(state = [], action) {
+export default function moviesReducer(state = [], action) {
   switch (action.type) {
     case `${QUERY_MOVIES}_PENDING`:
       return Object.assign({}, state, {isLoading: true});

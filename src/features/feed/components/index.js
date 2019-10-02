@@ -15,8 +15,6 @@ export default class FeedComponent extends React.Component {
     super(props);
     this.props.movies.movies = [];
     this.queryMovies();
-    // this.queryPopular();
-    console.log('props', this.props);
   }
 
   queryMovies = () => {
@@ -52,7 +50,7 @@ export default class FeedComponent extends React.Component {
                   {this.props.movies.movies.map(m => {
                     // console.log(m);
                     return (
-                      <View key={m.movie.ids.trakt} style={styles.card}>
+                      <View key={m.ids.trakt} style={styles.card}>
                         <Image
                           style={styles.imagePoster}
                           resizeMode="cover"
@@ -62,7 +60,7 @@ export default class FeedComponent extends React.Component {
                             ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
                           }}
                         />
-                        <Text style={styles.title}>{m.movie.title}</Text>
+                        <Text style={styles.title}>{m.title}</Text>
                       </View>
                     );
                   })}

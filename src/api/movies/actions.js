@@ -6,7 +6,7 @@ import {
   QUERY_CAST,
 } from './constants';
 
-const path = 'https://api.trakt.tv/calendars/all';
+const path = 'https://api.trakt.tv/movies/popular';
 const headersConfig = {
   'Content-Type': 'application/json',
   'trakt-api-version': '2',
@@ -18,7 +18,7 @@ export const queryMovies = () => {
   return dispatch => {
     dispatch({type: `${QUERY_MOVIES}_PENDING`});
     axios
-      .get(`${path}/movies`, {
+      .get(`${path}`, {
         headers: headersConfig,
       })
       .then(response => {
