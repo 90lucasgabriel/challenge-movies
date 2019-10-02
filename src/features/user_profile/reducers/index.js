@@ -1,6 +1,5 @@
 let initialState = {};
 
-//dummy content
 const userProfileData = (state = {}, action) => {
   initialState = state;
 

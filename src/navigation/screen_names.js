@@ -1,2 +1,2 @@
 export const FEED = 'Navegar';
-export const USER_PROFILE = 'UserProfile';
+export const USER_PROFILE = 'Perfil';

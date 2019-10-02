@@ -1,14 +1,9 @@
-export default function feedData(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          id: Math.random(),
-          text: action.text,
-        },
-      ];
-    default:
-      return state;
-  }
-}
+let initialState = {};
+
+const feedData = (state = {}, action) => {
+  initialState = state;
+
+  return state;
+};
+
+export default feedData;

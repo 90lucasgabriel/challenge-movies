@@ -82,7 +82,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     textAlign: 'center',
-    elevation: 3,
+    overflow: 'hidden',
+    elevation: 5,
   },
 
   featuredTitle: {
@@ -98,6 +99,20 @@ const styles = StyleSheet.create({
     left: 0,
     width: 400,
     height: 500,
+  },
+
+  refreshButton: {
+    position: 'absolute',
+    zIndex: 11,
+    right: 10,
+    bottom: 10,
+    backgroundColor: '#69f0ae',
+    width: 70,
+    height: 70,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 10,
   },
 });
 

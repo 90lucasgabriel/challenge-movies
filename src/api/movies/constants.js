@@ -1,4 +1,2 @@
-export const QUERY_TRENDING = 'QUERY_TRENDING';
+export const QUERY_MOVIES = 'QUERY_MOVIES';
 export const QUERY_POPULAR = 'QUERY_POPULAR';
-export const QUERY_PLAYED = 'QUERY_PLAYED';
-export const QUERY_CAST = 'QUERY_CAST';
