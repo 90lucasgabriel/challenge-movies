@@ -15,6 +15,7 @@ const RootNavigator = createBottomTabNavigator(
       activeTintColor: 'white',
       labelStyle: {
         fontSize: 12,
+        marginBottom: 15,
       },
       style: {
         backgroundColor: '#0277bd',
