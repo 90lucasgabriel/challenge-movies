@@ -1,6 +1,9 @@
 # challenge-movies
 Application to list movies from API (React Native + Redux + Styled Components)
 
+# Video Demo
+https://www.youtube.com/watch?v=zwJn4hNvqBA
+
 # Run
 - Install React Native and Android Studio;
 - Create local.properties into challenge-movies/android and set: sdk.dir=/home/USERNAME/Android/Sdk
