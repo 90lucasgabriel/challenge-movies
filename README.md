@@ -41,7 +41,7 @@ react-native start
 react-native run-android
 ```
 
-## Next Steps
+## Next Features and Steps
 - Create *axiosconfig* file and *.env*;
 - Create better components;
 - Create all unit tests;
