@@ -2,13 +2,14 @@ import {Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
 
-export default class MovieCard extends React.Component {
+export default class FeaturedMovieCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       id: '',
       title: '',
       year: '',
+      category: '',
     };
   }
 
@@ -17,6 +18,7 @@ export default class MovieCard extends React.Component {
       id: this.props.id,
       title: this.props.title,
       year: this.props.year,
+      category: this.props.category,
     });
   }
 
@@ -25,12 +27,13 @@ export default class MovieCard extends React.Component {
       id: nextProps.id,
       title: nextProps.title,
       year: nextProps.year,
+      category: nextProps.category,
     });
   }
 
   render() {
     return (
-      <TouchableOpacity key={this.state.id} style={styles.card}>
+      <TouchableOpacity key={this.state.id} style={styles.featuredCard}>
         <Image
           style={styles.imagePoster}
           resizeMode="cover"
@@ -39,7 +42,7 @@ export default class MovieCard extends React.Component {
               250}/${Math.floor(Math.random() * 500) + 400}`,
           }}
         />
-        <Text style={styles.title}>{this.state.title}</Text>
+        <Text style={styles.featuredTitle}>{this.state.title}</Text>
       </TouchableOpacity>
     );
   }

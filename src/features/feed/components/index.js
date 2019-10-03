@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Text,
   View,
-  Button,
   Image,
   ScrollView,
   ActivityIndicator,
@@ -11,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import MovieCard from '../../../components/movie_card';
 import styles from './styles';
+import FeaturedMovieCard from '../../../components/featured_movie_card';
 
 export default class FeedComponent extends React.Component {
   constructor(props) {
@@ -61,20 +61,11 @@ export default class FeedComponent extends React.Component {
                 <View style={styles.horizontalView}>
                   {this.props.movies.movies.map(m => {
                     return (
-                      <TouchableOpacity
+                      <MovieCard
                         key={m.movie.ids.trakt}
-                        style={styles.card}>
-                        <Image
-                          style={styles.imagePoster}
-                          resizeMode="cover"
-                          source={{
-                            uri: `https://picsum.photos/${Math.floor(
-                              Math.random() * 350,
-                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
-                          }}
-                        />
-                        <Text style={styles.title}>{m.movie.title}</Text>
-                      </TouchableOpacity>
+                        id={m.movie.ids.trakt}
+                        title={m.movie.title}
+                      />
                     );
                   })}
                 </View>
@@ -98,18 +89,11 @@ export default class FeedComponent extends React.Component {
                 <View style={styles.horizontalView}>
                   {this.props.popular.movies.map(m => {
                     return (
-                      <TouchableOpacity key={m.movie.trakt} style={styles.card}>
-                        <Image
-                          style={styles.imagePoster}
-                          resizeMode="cover"
-                          source={{
-                            uri: `https://picsum.photos/${Math.floor(
-                              Math.random() * 350,
-                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
-                          }}
-                        />
-                        <Text style={styles.title}>{m.movie.title}</Text>
-                      </TouchableOpacity>
+                      <MovieCard
+                        key={m.movie.ids.trakt}
+                        id={m.movie.ids.trakt}
+                        title={m.movie.title}
+                      />
                     );
                   })}
                 </View>
@@ -133,22 +117,11 @@ export default class FeedComponent extends React.Component {
                 <View style={styles.horizontalView}>
                   {this.props.movies.movies.map(m => {
                     return (
-                      <TouchableOpacity
+                      <FeaturedMovieCard
                         key={m.movie.ids.trakt}
-                        style={styles.featuredCard}>
-                        <Image
-                          style={styles.imagePoster}
-                          resizeMode="cover"
-                          source={{
-                            uri: `https://picsum.photos/${Math.floor(
-                              Math.random() * 350,
-                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
-                          }}
-                        />
-                        <Text style={styles.featuredTitle}>
-                          {m.movie.title}
-                        </Text>
-                      </TouchableOpacity>
+                        id={m.movie.ids.trakt}
+                        title={m.movie.title}
+                      />
                     );
                   })}
                 </View>
@@ -172,20 +145,11 @@ export default class FeedComponent extends React.Component {
                 <View style={styles.horizontalView}>
                   {this.props.movies.movies.map(m => {
                     return (
-                      <TouchableOpacity
+                      <MovieCard
                         key={m.movie.ids.trakt}
-                        style={styles.card}>
-                        <Image
-                          style={styles.imagePoster}
-                          resizeMode="cover"
-                          source={{
-                            uri: `https://picsum.photos/${Math.floor(
-                              Math.random() * 350,
-                            ) + 250}/${Math.floor(Math.random() * 500) + 400}`,
-                          }}
-                        />
-                        <Text style={styles.title}>{m.movie.title}</Text>
-                      </TouchableOpacity>
+                        id={m.movie.ids.trakt}
+                        title={m.movie.title}
+                      />
                     );
                   })}
                 </View>

@@ -18,23 +18,6 @@ const styles = StyleSheet.create({
     height: 180,
   },
 
-  textInput: {
-    height: 40,
-    borderColor: 'red',
-    borderWidth: 1,
-  },
-
-  button: {
-    position: 'absolute',
-    borderRadius: 50,
-    bottom: 20,
-    right: 40,
-  },
-
-  blue: {
-    backgroundColor: 'blue',
-  },
-
   wrapper: {
     flex: 1,
     justifyContent: 'space-around',
@@ -51,54 +34,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginLeft: 5,
-  },
-
-  card: {
-    position: 'relative',
-    height: 180,
-    width: 125,
-    backgroundColor: 'white',
-    margin: 5,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    textAlign: 'center',
-    elevation: 3,
-    overflow: 'hidden',
-  },
-
-  title: {
-    margin: 10,
-    textAlign: 'center',
-  },
-
-  featuredCard: {
-    position: 'relative',
-    height: 300,
-    width: 170,
-    backgroundColor: 'white',
-    margin: 5,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    textAlign: 'center',
-    overflow: 'hidden',
-    elevation: 5,
-  },
-
-  featuredTitle: {
-    margin: 10,
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-
-  imagePoster: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: 400,
-    height: 500,
   },
 
   refreshButton: {

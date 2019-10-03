@@ -1,23 +1,25 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  card: {
+  featuredCard: {
     position: 'relative',
-    height: 180,
-    width: 125,
+    height: 300,
+    width: 170,
     backgroundColor: 'white',
     margin: 5,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'flex-end',
     textAlign: 'center',
-    elevation: 3,
     overflow: 'hidden',
+    elevation: 5,
   },
 
-  title: {
+  featuredTitle: {
     margin: 10,
     textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 
   imagePoster: {
