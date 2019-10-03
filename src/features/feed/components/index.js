@@ -71,7 +71,7 @@ export default class FeedComponent extends React.Component {
               </ScrollView>
             </View>
           )}
-          {/* LANCAMENTOS END */}
+          {/* EM ALTA END */}
 
           {/* POPULARES START */}
           {this.props.popular.isLoading ? (
@@ -99,7 +99,7 @@ export default class FeedComponent extends React.Component {
               </ScrollView>
             </View>
           )}
-          {/* FEATUREDS END */}
+          {/* POPULARES END */}
 
           {/* FEATURED START */}
           {this.props.movies.isLoading ? (
