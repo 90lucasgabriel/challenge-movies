@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EAEAEA",
+      "flex": 1,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "https://picsum.photos/500/500",
+      }
+    }
+    style={
+      Object {
+        "height": 400,
+        "position": "absolute",
+        "width": 400,
+      }
+    }
+  />
+  <RCTScrollView
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderTopLeftRadius": 25,
+            "borderTopRightRadius": 25,
+            "elevation": 12,
+            "flex": 1,
+            "marginTop": 380,
+            "paddingTop": 25,
+            "shadowColor": "black",
+            "zIndex": 5,
+          }
+        }
+      >
+        <RCTScrollView
+          data={
+            Array [
+              Object {
+                "key": "Olá, usuário. :)",
+              },
+              Object {
+                "key": "Meus favoritos",
+              },
+              Object {
+                "key": "Meus dados",
+              },
+              Object {
+                "key": "Configurações",
+              },
+              Object {
+                "key": "Lista de desejo",
+              },
+              Object {
+                "key": "Recomendações",
+              },
+              Object {
+                "key": "Histórico",
+              },
+              Object {
+                "key": "Mais assistidos",
+              },
+              Object {
+                "key": "Entrar com outra conta",
+              },
+              Object {
+                "key": "Sair",
+              },
+            ]
+          }
+          disableVirtualization={false}
+          getItem={[Function]}
+          getItemCount={[Function]}
+          horizontal={false}
+          initialNumToRender={10}
+          keyExtractor={[Function]}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onContentSizeChange={[Function]}
+          onEndReachedThreshold={2}
+          onLayout={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Olá, usuário. :)
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Meus favoritos
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Meus dados
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Configurações
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Lista de desejo
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Recomendações
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Histórico
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Mais assistidos
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Entrar com outra conta
+              </Text>
+            </View>
+            <View
+              onLayout={[Function]}
+              style={null}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 22,
+                    "height": 60,
+                    "padding": 12,
+                  }
+                }
+              >
+                Sair
+              </Text>
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

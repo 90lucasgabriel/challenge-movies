@@ -10,8 +10,7 @@ export default class UserProfileComponent extends React.Component {
           style={styles.imageProfile}
           resizeMode="cover"
           source={{
-            uri: `https://picsum.photos/${Math.floor(Math.random() * 350) +
-              250}/${Math.floor(Math.random() * 500) + 400}`,
+            uri: `https://picsum.photos/500/500`,
           }}
         />
         <ScrollView style={styles.scrollContainer}>
