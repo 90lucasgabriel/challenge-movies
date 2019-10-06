@@ -18,24 +18,6 @@ const styles = StyleSheet.create({
     height: 180,
   },
 
-  wrapper: {
-    flex: 1,
-    justifyContent: 'space-around',
-  },
-
-  categoryTitle: {
-    fontSize: 20,
-    marginLeft: 10,
-    marginTop: 10,
-  },
-
-  horizontalView: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginLeft: 5,
-  },
-
   refreshButton: {
     position: 'absolute',
     zIndex: 11,

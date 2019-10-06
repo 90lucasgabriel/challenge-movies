@@ -12,18 +12,11 @@ export default class MovieCardList extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      categoryName: this.props.categoryName,
-      itemList: this.props.itemList,
-    });
-  }
-
-  componentWillRecieveProps(nextProps, nextState) {
-    this.setState({
-      categoryName: nextProps.categoryName,
-      itemList: nextProps.itemList,
-    });
+  static getDerivedStateFromProps(props, state) {
+    return {
+      categoryName: props.categoryName,
+      itemList: props.itemList,
+    };
   }
 
   render() {
@@ -38,9 +31,10 @@ export default class MovieCardList extends React.Component {
             {this.state.itemList.map(m => {
               return (
                 <MovieCard
-                  key={m.movie.ids.trakt}
-                  id={m.movie.ids.trakt}
-                  title={m.movie.title}
+                  key={m.id}
+                  id={m.id}
+                  title={m.original_title}
+                  poster={m.poster_path}
                 />
               );
             })}

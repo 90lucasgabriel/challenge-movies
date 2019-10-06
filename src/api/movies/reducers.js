@@ -1,4 +1,4 @@
-import {QUERY_MOVIES, QUERY_POPULAR} from './constants';
+import {QUERY_UPCOMING, QUERY_POPULAR} from './constants';
 
 const initState = {
   isLoading: false,
@@ -8,36 +8,46 @@ const initState = {
 };
 
 export default function moviesReducer(state = [], action) {
+  console.log('reducers', action);
   switch (action.type) {
-    case `${QUERY_MOVIES}_PENDING`:
-      return Object.assign({}, state, {isLoading: true});
+    case `${QUERY_UPCOMING}_PENDING`:
+      return {
+        ...state,
+        isLoading: true,
+      };
 
-    case `${QUERY_MOVIES}_FULFILLED`:
-      return Object.assign({}, state, {
+    case `${QUERY_UPCOMING}_FULFILLED`:
+      console.log('action', action);
+      return {
+        ...state,
         isLoading: false,
-        movies: action.movies,
-      });
+        movies: action.payload,
+      };
 
-    case `${QUERY_MOVIES}_REJECTED`:
-      return Object.assign({}, state, {
+    case `${QUERY_UPCOMING}_REJECTED`:
+      return {
+        ...state,
         isLoading: false,
-        movies: action.movies,
-      });
+      };
 
     case `${QUERY_POPULAR}_PENDING`:
-      return Object.assign({}, state, {isLoading: true});
+      return {
+        ...state,
+        isLoading: true,
+      };
 
     case `${QUERY_POPULAR}_FULFILLED`:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: false,
-        popular: action.popular,
-      });
+        popular: action.payload,
+      };
 
     case `${QUERY_POPULAR}_REJECTED`:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: false,
-        popular: action.popular,
-      });
+      };
 
     default:
       return state;

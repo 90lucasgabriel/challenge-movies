@@ -1,4 +1,4 @@
-import {Text, Image, TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
 
@@ -8,24 +8,16 @@ export default class MovieCard extends React.Component {
     this.state = {
       id: '',
       title: '',
-      year: '',
+      poster: '',
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      id: this.props.id,
-      title: this.props.title,
-      year: this.props.year,
-    });
-  }
-
-  componentWillRecieveProps(nextProps, nextState) {
-    this.setState({
-      id: nextProps.id,
-      title: nextProps.title,
-      year: nextProps.year,
-    });
+  static getDerivedStateFromProps(props, state) {
+    return {
+      id: props.id,
+      poster: props.poster,
+      title: props.title,
+    };
   }
 
   render() {
@@ -35,11 +27,9 @@ export default class MovieCard extends React.Component {
           style={styles.imagePoster}
           resizeMode="cover"
           source={{
-            uri: `https://picsum.photos/${Math.floor(Math.random() * 350) +
-              250}/${Math.floor(Math.random() * 500) + 400}`,
+            uri: `https://image.tmdb.org/t/p/w500/${this.state.poster}`,
           }}
         />
-        <Text style={styles.title}>{this.state.title}</Text>
       </TouchableOpacity>
     );
   }

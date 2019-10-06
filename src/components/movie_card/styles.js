@@ -16,15 +16,32 @@ export default StyleSheet.create({
   },
 
   title: {
+    position: 'absolute',
+    bottom: 20,
     margin: 10,
     textAlign: 'center',
   },
 
   imagePoster: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: 400,
-    height: 500,
+    width: '100%',
+    height: '100%',
+  },
+
+  categoryTitle: {
+    fontSize: 20,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+
+  wrapper: {
+    flex: 1,
+    justifyContent: 'space-around',
+  },
+
+  horizontalView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 5,
   },
 });
