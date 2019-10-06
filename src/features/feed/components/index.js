@@ -8,6 +8,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
 import MovieCardList from '../../../components/movie_card/list';
+import SpinnerLoader from '../../../components/spinner_loader';
 
 export default class FeedComponent extends React.Component {
   constructor(props) {
@@ -30,26 +31,31 @@ export default class FeedComponent extends React.Component {
     this.latest = await this.props.queryPopular();
   };
 
-  render() {
+  _renderMovieCardList() {
     if (this.props.movies.movies) {
-      this.latestView = (
+      return (
         <MovieCardList
           categoryName="Em breve"
           itemList={this.props.movies.movies.data.results}
         />
       );
     }
+
+    return (
+      <SpinnerLoader
+        isVisible={this.props.movies.isLoading}
+        size="large"
+        color="#69f0ae"
+      />
+    );
+  }
+
+  render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.scrollContainer}>
           {/* EM ALTA START */}
-          {this.props.movies.isLoading ? (
-            <View style={styles.wrapperLoader}>
-              <ActivityIndicator size="large" color="#69f0ae" />
-            </View>
-          ) : (
-            this.latestView
-          )}
+          {this._renderMovieCardList()}
           {/* EM ALTA END */}
 
           {/* POPULARES START */}

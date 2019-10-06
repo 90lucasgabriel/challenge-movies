@@ -1,14 +1,6 @@
 import {QUERY_UPCOMING, QUERY_POPULAR} from './constants';
 
-const initState = {
-  isLoading: false,
-  error: false,
-  movies: '',
-  popular: '',
-};
-
 export default function moviesReducer(state = [], action) {
-  console.log('reducers', action);
   switch (action.type) {
     case `${QUERY_UPCOMING}_PENDING`:
       return {
