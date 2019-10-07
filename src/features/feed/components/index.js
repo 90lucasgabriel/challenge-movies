@@ -16,9 +16,14 @@ export default class FeedComponent extends React.Component {
   }
 
   componentDidMount = () => {
+    this.queryNowPlaying();
     this.queryPopular();
     this.queryTopRated();
     this.queryUpcoming();
+  };
+
+  queryNowPlaying = async () => {
+    this.nowplaying = await this.props.queryNowPlaying();
   };
 
   queryPopular = async () => {
@@ -34,7 +39,6 @@ export default class FeedComponent extends React.Component {
   };
 
   _renderMovieCardList(props, categoryName) {
-    console.log('props', this.props);
     if (props.movies) {
       return (
         <MovieCardList
@@ -54,6 +58,7 @@ export default class FeedComponent extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.scrollContainer}>
           {this._renderMovieCardList(this.props.upcoming, 'Lançamentos')}
+          {this._renderMovieCardList(this.props.nowplaying, 'Em exibição')}
           {this._renderMovieCardList(this.props.popular, 'Popular')}
           {this._renderMovieCardList(this.props.toprated, 'Melhores Avaliados')}
         </ScrollView>

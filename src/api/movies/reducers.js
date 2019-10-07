@@ -1,4 +1,35 @@
-import {QUERY_POPULAR, QUERY_TOPRATED, QUERY_UPCOMING} from './constants';
+import {
+  QUERY_NOWPLAYING,
+  QUERY_POPULAR,
+  QUERY_TOPRATED,
+  QUERY_UPCOMING,
+} from './constants';
+
+export function nowplaying(state = [], action) {
+  switch (action.type) {
+    case `${QUERY_NOWPLAYING}_PENDING`:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case `${QUERY_NOWPLAYING}_FULFILLED`:
+      return {
+        ...state,
+        isLoading: false,
+        movies: action.payload,
+      };
+
+    case `${QUERY_NOWPLAYING}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false,
+      };
+
+    default:
+      return state;
+  }
+}
 
 export function popular(state = [], action) {
   switch (action.type) {
@@ -9,7 +40,6 @@ export function popular(state = [], action) {
       };
 
     case `${QUERY_POPULAR}_FULFILLED`:
-      console.log('popular fulfilled', action);
       return {
         ...state,
         isLoading: false,

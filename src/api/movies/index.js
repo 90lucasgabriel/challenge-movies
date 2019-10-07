@@ -5,6 +5,12 @@ const paramsConfig = {
   api_key: 'dd656e8f52997de093bf8523eda0de95',
 };
 
+export const queryNowPlaying = () => {
+  return axios.get(`${path}/movie/now_playing`, {
+    params: paramsConfig,
+  });
+};
+
 export const queryPopular = () => {
   return axios.get(`${path}/movie/popular`, {
     params: paramsConfig,

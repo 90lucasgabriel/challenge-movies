@@ -1,5 +1,17 @@
 import * as movies from './index';
-import {QUERY_POPULAR, QUERY_TOPRATED, QUERY_UPCOMING} from './constants';
+import {
+  QUERY_NOWPLAYING,
+  QUERY_POPULAR,
+  QUERY_TOPRATED,
+  QUERY_UPCOMING,
+} from './constants';
+
+export const queryNowPlaying = () => {
+  return {
+    type: QUERY_NOWPLAYING,
+    payload: movies.queryNowPlaying(),
+  };
+};
 
 export const queryPopular = () => {
   return {

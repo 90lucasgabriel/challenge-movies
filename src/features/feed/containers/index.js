@@ -4,6 +4,7 @@ import * as MoviesActions from '../../../api/movies/actions';
 import FeedComponent from '../components';
 
 const mapStateToProps = state => ({
+  nowplaying: state.nowplaying,
   popular: state.popular,
   toprated: state.toprated,
   upcoming: state.upcoming,
