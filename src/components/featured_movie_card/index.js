@@ -8,27 +8,16 @@ export default class FeaturedMovieCard extends React.Component {
     this.state = {
       id: '',
       title: '',
-      year: '',
-      category: '',
+      poster: '',
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      id: this.props.id,
-      title: this.props.title,
-      year: this.props.year,
-      category: this.props.category,
-    });
-  }
-
-  componentWillRecieveProps(nextProps, nextState) {
-    this.setState({
-      id: nextProps.id,
-      title: nextProps.title,
-      year: nextProps.year,
-      category: nextProps.category,
-    });
+  static getDerivedStateFromProps(props, state) {
+    return {
+      id: props.id,
+      poster: props.poster,
+      title: props.title,
+    };
   }
 
   render() {
@@ -38,11 +27,9 @@ export default class FeaturedMovieCard extends React.Component {
           style={styles.imagePoster}
           resizeMode="cover"
           source={{
-            uri: `https://picsum.photos/${Math.floor(Math.random() * 350) +
-              250}/${Math.floor(Math.random() * 500) + 400}`,
+            uri: `https://image.tmdb.org/t/p/w500/${this.state.poster}`,
           }}
         />
-        <Text style={styles.featuredTitle}>{this.state.title}</Text>
       </TouchableOpacity>
     );
   }
