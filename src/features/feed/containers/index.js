@@ -4,8 +4,9 @@ import * as MoviesActions from '../../../api/movies/actions';
 import FeedComponent from '../components';
 
 const mapStateToProps = state => ({
-  movies: state.movies,
   popular: state.popular,
+  toprated: state.toprated,
+  upcoming: state.upcoming,
 });
 
 const mapDispatchToProps = dispatch =>

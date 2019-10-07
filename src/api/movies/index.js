@@ -5,14 +5,20 @@ const paramsConfig = {
   api_key: 'dd656e8f52997de093bf8523eda0de95',
 };
 
-export const queryUpcoming = () => {
-  return axios.get(`${path}/movie/upcoming`, {
+export const queryPopular = () => {
+  return axios.get(`${path}/movie/popular`, {
     params: paramsConfig,
   });
 };
 
-export const queryPopular = () => {
-  return axios.get(`${path}/movie/popular`, {
+export const queryTopRated = () => {
+  return axios.get(`${path}/movie/top_rated`, {
+    params: paramsConfig,
+  });
+};
+
+export const queryUpcoming = () => {
+  return axios.get(`${path}/movie/upcoming`, {
     params: paramsConfig,
   });
 };
