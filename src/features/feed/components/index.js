@@ -17,6 +17,10 @@ export default class FeedComponent extends React.Component {
   }
 
   componentDidMount = () => {
+    this.loadMovies();
+  };
+
+  loadMovies = () => {
     this.queryNowPlaying();
     this.queryPopular();
     this.queryTopRated();
@@ -80,7 +84,7 @@ export default class FeedComponent extends React.Component {
         </ScrollView>
         <TouchableOpacity
           style={styles.refreshButton}
-          onPress={this.queryUpcoming}>
+          onPress={this.loadMovies}>
           <Icon name="sync" size={22} color="white" />
         </TouchableOpacity>
       </View>
