@@ -22,9 +22,9 @@ git clone git@github.com:90lucasgabriel/challenge-movies.git
 ```
 cd challenge-movies
 ```
-- Create *local.properties* into *challenge-movies/android* and set: 
+- Run to create *local.properties* into *challenge-movies/android* and set ANDROID_SDK_ROOT path: 
 ```
-sdk.dir=/home/USERNAME/Android/Sdk
+echo "sdk.dir=/home/$(whoami)/Android/Sdk" >> android/local.properties
 ```
 - Install dependencies: 
 ```
